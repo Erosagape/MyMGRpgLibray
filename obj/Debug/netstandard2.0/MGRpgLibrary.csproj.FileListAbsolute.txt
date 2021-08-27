@@ -1,0 +1,9 @@
+D:\SourceCode\MGRpgLibrary\obj\Debug\netstandard2.0\MGRpgLibrary.csproj.AssemblyReference.cache
+D:\SourceCode\MGRpgLibrary\obj\Debug\netstandard2.0\MGRpgLibrary.AssemblyInfoInputs.cache
+D:\SourceCode\MGRpgLibrary\obj\Debug\netstandard2.0\MGRpgLibrary.AssemblyInfo.cs
+D:\SourceCode\MGRpgLibrary\obj\Debug\netstandard2.0\MGRpgLibrary.csproj.CoreCompileInputs.cache
+D:\SourceCode\MGRpgLibrary\bin\Debug\netstandard2.0\MGRpgLibrary.deps.json
+D:\SourceCode\MGRpgLibrary\bin\Debug\netstandard2.0\MGRpgLibrary.dll
+D:\SourceCode\MGRpgLibrary\bin\Debug\netstandard2.0\MGRpgLibrary.pdb
+D:\SourceCode\MGRpgLibrary\obj\Debug\netstandard2.0\MGRpgLibrary.dll
+D:\SourceCode\MGRpgLibrary\obj\Debug\netstandard2.0\MGRpgLibrary.pdb
