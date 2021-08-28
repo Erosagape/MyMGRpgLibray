@@ -10,6 +10,7 @@ namespace MGRpgLibrary.Controls
     {
         private int selectedControl = 0;
         private static SpriteFont spriteFont;
+        public event EventHandler FocusChanged;
         public static SpriteFont SpriteFont
         {
             get { return spriteFont; }
@@ -64,7 +65,11 @@ namespace MGRpgLibrary.Controls
                 if (selectedControl == Count)
                     selectedControl = 0;
                 if (this[selectedControl].TabStop && this[selectedControl].Enabled)
+                {
+                    if (FocusChanged != null)
+                        FocusChanged(this[selectedControl], null);
                     break;
+                }
             } while (currentControl != selectedControl);
             this[selectedControl].HasFocus = true;
         }
@@ -80,7 +85,11 @@ namespace MGRpgLibrary.Controls
                 if (selectedControl < 0)
                     selectedControl = Count - 1;
                 if (this[selectedControl].TabStop && this[selectedControl].Enabled)
+                {
+                    if (FocusChanged != null)
+                        FocusChanged(this[selectedControl], null);
                     break;
+                }
             } while (currentControl!=selectedControl);
             this[selectedControl].HasFocus = true;
         }
