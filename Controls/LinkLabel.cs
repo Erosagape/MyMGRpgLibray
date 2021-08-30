@@ -16,7 +16,7 @@ namespace MGRpgLibrary.Controls
         }
         public LinkLabel()
         {
-            tabStop = false;
+            tabStop = true;
             hasFocus = false;
             position = Vector2.Zero;
         }
