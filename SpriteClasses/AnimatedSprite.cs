@@ -69,7 +69,7 @@ namespace MGRpgLibrary.SpriteClasses
         {
             spriteBatch.Draw(
                 texture,
-                Position-camera.Position,
+                Position,
                 animations[currentAnimation].CurrentFrameRect,
                 Color.White
                 );

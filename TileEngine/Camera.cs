@@ -36,6 +36,26 @@ namespace MGRpgLibrary.TileEngine
             get { return zoom;  }
         }
         Rectangle viewportRectangle;
+        public Rectangle ViewportRectangle
+        {
+            get
+            {
+                return new Rectangle(
+                    viewportRectangle.X,
+                    viewportRectangle.Y,
+                    viewportRectangle.Width,
+                    viewportRectangle.Height
+                    );
+            }
+        }
+        public Matrix Transformation
+        {
+            get
+            {
+                return Matrix.CreateScale(zoom) *
+                    Matrix.CreateTranslation(new Vector3(-Position, 0f));
+            }
+        }
         public Camera(Rectangle viewportRect)
         {
             speed = 4f;
@@ -50,6 +70,30 @@ namespace MGRpgLibrary.TileEngine
             viewportRectangle = viewportRect;
             Position = position;
             mode = CameraMode.Follow;
+        }
+        public void ZoomIn()
+        {
+            zoom += .25f;
+            if (zoom < 2.5f)
+                zoom = 2.5f;
+
+            Vector2 newPosition = Position * zoom;
+            SnapToPosition(newPosition);
+        }
+        public void ZoomOut()
+        {
+            zoom -= .25f;
+            if (zoom < .5f)
+                zoom = .5f;
+
+            Vector2 newPosition = Position * zoom;
+            SnapToPosition(newPosition);
+        }
+        private void SnapToPosition(Vector2 newPos)
+        {
+            position.X = newPos.X - viewportRectangle.Width / 2;
+            position.Y = newPos.Y - viewportRectangle.Height / 2;
+            LockCamera();
         }
         public void Update(GameTime gameTime)
         {
@@ -80,14 +124,14 @@ namespace MGRpgLibrary.TileEngine
         }
         private void LockCamera()
         {
-            position.X = MathHelper.Clamp(position.X, 0, TileMap.WidthInPixels - viewportRectangle.Width);
-            position.Y = MathHelper.Clamp(position.Y, 0, TileMap.HeightInPixels - viewportRectangle.Height);
+            position.X = MathHelper.Clamp(position.X, 0, (TileMap.WidthInPixels * zoom) - viewportRectangle.Width);
+            position.Y = MathHelper.Clamp(position.Y, 0, (TileMap.HeightInPixels * zoom) - viewportRectangle.Height);
         }
         public void LockToSprite(AnimatedSprite sprite)
         {
-            position.X = sprite.Position.X + sprite.Width / 2
+            position.X = (sprite.Position.X + sprite.Width / 2)*zoom
                 - (viewportRectangle.Width / 2);
-            position.Y = sprite.Position.Y + sprite.Height / 2
+            position.Y = (sprite.Position.Y + sprite.Height / 2)*zoom
                 - (viewportRectangle.Height / 2);
 
             LockCamera();

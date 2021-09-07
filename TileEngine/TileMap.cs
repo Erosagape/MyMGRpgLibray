@@ -49,13 +49,13 @@ namespace MGRpgLibrary.TileEngine
             {
                 for(int y=0;y< layer.Height; y++)
                 {
-                    destination.Y = y * Engine.TileHeight- (int)camera.Position.Y;
+                    destination.Y = y * Engine.TileHeight;
                     for(int x = 0; x < layer.Width; x++)
                     {
                         tile = layer.GetTile(x, y);
                         if(tile.TileIndex==-1||tile.TileSet==-1)
                             continue;
-                        destination.X = x * Engine.TileWidth - (int)camera.Position.X;
+                        destination.X = x * Engine.TileWidth;
                         spriteBatch.Draw(
                             tilesets[tile.TileSet].Texture,
                             destination,
