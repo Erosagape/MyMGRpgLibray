@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework;
 namespace MGRpgLibrary.SpriteClasses
 {
     public enum AnimationKey { Down,Left,Right,Up}
-    public class Animation : ICloneable
+    public class Animation
     {
         Rectangle[] frames;
         int framesPerSecond;
