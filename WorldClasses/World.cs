@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
 namespace MGRpgLibrary.WorldClasses
 {
-    public class World
+    public class World : DrawableGameComponent
     {
         Rectangle screenRect;
         public Rectangle ScreenRectangle
@@ -19,17 +19,39 @@ namespace MGRpgLibrary.WorldClasses
             get { return screenRect; }
         }
         ItemManager itemManager = new ItemManager();
-        public World(Rectangle screen)
+        readonly List<Level> levels = new List<Level>();
+        public List<Level> Levels
+        {
+            get { return levels; }
+        }
+        int currentLevel = -1;
+        public int CurrentLevel
+        {
+            get { return currentLevel; }
+            set
+            {
+                if (value < 0 || value >= levels.Count)
+                    throw new IndexOutOfRangeException();
+                if (levels[value] == null)
+                    throw new NullReferenceException();
+                currentLevel = value;
+            }
+        }
+        public World(Game game,Rectangle screen) : base(game)
         {
             screenRect = screen;
         }
-        public void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
 
         }
-        public void Draw(GameTime gameTime,SpriteBatch spriteBatch)
+        public override void Draw(GameTime gameTime)
         {
-
+            base.Draw(gameTime);
+        }
+        public void DrawLevel(SpriteBatch spriteBatch,Camera camera)
+        {
+            levels[currentLevel].Draw(spriteBatch, camera);
         }
     }
 }
