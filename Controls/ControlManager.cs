@@ -8,6 +8,12 @@ namespace MGRpgLibrary.Controls
 {
     public class ControlManager : List<Control>
     {
+        bool acceptInput = true;
+        public bool AcceptInput
+        {
+            get { return acceptInput; }
+            set { acceptInput = value; }
+        }
         private int selectedControl = 0;
         private static SpriteFont spriteFont;
         public event EventHandler FocusChanged;
@@ -38,6 +44,8 @@ namespace MGRpgLibrary.Controls
                 if (c.HasFocus)
                     c.HandleInput(playerIndex);
             }
+            if (!acceptInput)
+                return;
             if (InputHandler.ButtonPressed(Buttons.LeftThumbstickUp, playerIndex) ||
                 InputHandler.ButtonPressed(Buttons.DPadUp, playerIndex) ||
                 InputHandler.KeyPressed(Keys.Up))

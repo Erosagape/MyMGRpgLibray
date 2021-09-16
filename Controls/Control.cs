@@ -43,7 +43,7 @@ namespace MGRpgLibrary.Controls
             set { this.value = value; }
         }
         protected bool hasFocus;
-        public bool HasFocus
+        public virtual bool HasFocus
         {
             get { return hasFocus; }
             set { hasFocus = value; }
