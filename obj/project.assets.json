@@ -213,6 +213,18 @@
           }
         }
       },
+      "MonoGame.Framework.Content.Pipeline.Portable/3.7.1.189": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Framework.Portable": "3.7.1.189"
+        },
+        "compile": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.Content.Pipeline.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.Content.Pipeline.dll": {}
+        }
+      },
       "MonoGame.Framework.DesktopGL/3.8.0.1641": {
         "type": "package",
         "compile": {
@@ -257,6 +269,15 @@
             "assetType": "native",
             "rid": "win-x86"
           }
+        }
+      },
+      "MonoGame.Framework.Portable/3.7.1.189": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.dll": {}
         }
       },
       "NETStandard.Library/2.0.3": {
@@ -352,7 +373,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "MonoGame.Framework.Content.Pipeline": "3.8.0.1641"
+          "MonoGame.Framework.Content.Pipeline": "3.8.0.1641",
+          "MonoGame.Framework.Content.Pipeline.Portable": "3.7.1.189",
+          "MonoGame.Framework.DesktopGL": "3.8.0.1641"
         },
         "compile": {
           "bin/placeholder/RpgLibrary.dll": {}
@@ -515,6 +538,19 @@
         "runtimes/win-x64/native/nvtt.dll"
       ]
     },
+    "MonoGame.Framework.Content.Pipeline.Portable/3.7.1.189": {
+      "sha512": "2kjHKS8w0PPeIROZmLSGpd8vgS7DCCkmt/c2B9JuoDu9WyjziENch/lxMViGCbE/wHLrfBa5xG5OunU4DK8crA==",
+      "type": "package",
+      "path": "monogame.framework.content.pipeline.portable/3.7.1.189",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/portable-net45+win8+wpa81/MonoGame.Framework.Content.Pipeline.dll",
+        "lib/portable-net45+win8+wpa81/MonoGame.Framework.Content.Pipeline.xml",
+        "monogame.framework.content.pipeline.portable.3.7.1.189.nupkg.sha512",
+        "monogame.framework.content.pipeline.portable.nuspec"
+      ]
+    },
     "MonoGame.Framework.DesktopGL/3.8.0.1641": {
       "sha512": "rJQlrlHQbnOECYV6EcQ8GlGRQ2lzPTroXQcyyOZ0ki+BQRSJEN2zVBm9skqLiXya348aGAfTSSGTaSKjAy9NaA==",
       "type": "package",
@@ -538,6 +574,19 @@
         "runtimes/win-x64/native/soft_oal.dll",
         "runtimes/win-x86/native/SDL2.dll",
         "runtimes/win-x86/native/soft_oal.dll"
+      ]
+    },
+    "MonoGame.Framework.Portable/3.7.1.189": {
+      "sha512": "Q5ARWZtCtJa8aD5zeeMmEkAwnguEq6aZqeIh9RdAi9RhaYJxoGc0lYka4sZaq2hGQAP7KFsPe4U9uhK/6c37vg==",
+      "type": "package",
+      "path": "monogame.framework.portable/3.7.1.189",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/portable-net45+win8+wpa81/MonoGame.Framework.dll",
+        "lib/portable-net45+win8+wpa81/MonoGame.Framework.xml",
+        "monogame.framework.portable.3.7.1.189.nupkg.sha512",
+        "monogame.framework.portable.nuspec"
       ]
     },
     "NETStandard.Library/2.0.3": {
@@ -969,5 +1018,27 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MonoGame.Framework.Content.Pipeline.Portable 3.7.1.189' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MonoGame.Framework.Content.Pipeline.Portable",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MonoGame.Framework.Portable 3.7.1.189' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MonoGame.Framework.Portable",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }
