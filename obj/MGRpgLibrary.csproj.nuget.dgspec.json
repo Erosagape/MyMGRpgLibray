@@ -1,21 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SourceCode\\MGRpgLibrary\\MGRpgLibrary.csproj": {}
+    "D:\\playground\\MGRpgLibrary\\MGRpgLibrary.csproj": {}
   },
   "projects": {
-    "D:\\SourceCode\\MGRpgLibrary\\MGRpgLibrary.csproj": {
+    "D:\\playground\\MGRpgLibrary\\MGRpgLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SourceCode\\MGRpgLibrary\\MGRpgLibrary.csproj",
+        "projectUniqueName": "D:\\playground\\MGRpgLibrary\\MGRpgLibrary.csproj",
         "projectName": "MGRpgLibrary",
-        "projectPath": "D:\\SourceCode\\MGRpgLibrary\\MGRpgLibrary.csproj",
+        "projectPath": "D:\\playground\\MGRpgLibrary\\MGRpgLibrary.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\SourceCode\\MGRpgLibrary\\obj\\",
+        "outputPath": "D:\\playground\\MGRpgLibrary\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -28,8 +34,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "D:\\SourceCode\\RpgLibrary\\RpgLibrary.csproj": {
-                "projectPath": "D:\\SourceCode\\RpgLibrary\\RpgLibrary.csproj"
+              "D:\\playground\\RpgLibrary\\RpgLibrary.csproj": {
+                "projectPath": "D:\\playground\\RpgLibrary\\RpgLibrary.csproj"
               }
             }
           }
@@ -66,22 +72,28 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\SourceCode\\RpgLibrary\\RpgLibrary.csproj": {
+    "D:\\playground\\RpgLibrary\\RpgLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SourceCode\\RpgLibrary\\RpgLibrary.csproj",
+        "projectUniqueName": "D:\\playground\\RpgLibrary\\RpgLibrary.csproj",
         "projectName": "RpgLibrary",
-        "projectPath": "D:\\SourceCode\\RpgLibrary\\RpgLibrary.csproj",
+        "projectPath": "D:\\playground\\RpgLibrary\\RpgLibrary.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\SourceCode\\RpgLibrary\\obj\\",
+        "outputPath": "D:\\playground\\RpgLibrary\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -110,6 +122,14 @@
               "target": "Package",
               "version": "[3.8.0.1641, )"
             },
+            "MonoGame.Framework.Content.Pipeline.Portable": {
+              "target": "Package",
+              "version": "[3.7.1.189, )"
+            },
+            "MonoGame.Framework.DesktopGL": {
+              "target": "Package",
+              "version": "[3.8.0.1641, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -127,7 +147,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

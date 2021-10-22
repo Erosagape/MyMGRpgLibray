@@ -65,7 +65,7 @@ namespace MGRpgLibrary.SpriteClasses
             if (isAnimating)
                 animations[currentAnimation].Update(gameTime);
         }
-        public void Draw(GameTime gameTime,SpriteBatch spriteBatch,Camera camera)
+        public void Draw(GameTime gameTime,SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(
                 texture,
