@@ -5,6 +5,8 @@ using RpgLibrary.CharacterClasses;
 using MGRpgLibrary.SpriteClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using MGRpgLibrary.ItemClasses;
+
 namespace MGRpgLibrary.CharacterClasses
 {
     public class Character
@@ -13,6 +15,17 @@ namespace MGRpgLibrary.CharacterClasses
         #region Field Region
         protected Entity entity;
         protected AnimatedSprite sprite;
+
+        //Armor Fields
+        protected GameItem head;
+        protected GameItem body;
+        protected GameItem hands;
+        protected GameItem feet;
+
+        //Weapon/Shield Fields
+        protected GameItem mainHand;
+        protected GameItem offHand;
+        protected int handsFree;
         #endregion
         #region Property Region
         public Entity Entity
@@ -22,6 +35,34 @@ namespace MGRpgLibrary.CharacterClasses
         public AnimatedSprite Sprite
         {
             get { return sprite; }
+        }
+        public GameItem Head
+        {
+            get { return head; }
+        }
+        public GameItem Body
+        {
+            get { return body; }
+        }
+        public GameItem Hands
+        {
+            get { return hands; }
+        }
+        public GameItem Feet
+        {
+            get { return feet; }
+        }
+        public GameItem MainHand
+        {
+            get { return mainHand; }
+        }
+        public GameItem OffHand
+        {
+            get { return offHand; }
+        }
+        public int HandsFree
+        {
+            get { return handsFree; }
         }
         #endregion
         #region Constructor Region
@@ -42,6 +83,16 @@ namespace MGRpgLibrary.CharacterClasses
         public virtual void Draw(GameTime gameTime,SpriteBatch spriteBatch)
         {
             sprite.Draw(gameTime, spriteBatch);
+        }
+        public virtual bool Equip(GameItem gameItem)
+        {
+            bool success = false;
+            return success;
+        }
+        public virtual bool Unequip(GameItem gameItem)
+        {
+            bool success = false;
+            return success;
         }
         #endregion
 
