@@ -13,7 +13,7 @@ namespace MGRpgLibrary.TileEngine
             private set { tileIndex = value; }
         }
         int tileset;
-        public int TileSet
+        public int Tileset
         {
             get { return tileset; }
             private set { tileset = value; }

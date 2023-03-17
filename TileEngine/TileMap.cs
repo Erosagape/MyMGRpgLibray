@@ -7,7 +7,7 @@ namespace MGRpgLibrary.TileEngine
 {
     public class TileMap
     {
-        List<TileSet> tilesets;
+        List<Tileset> tilesets;
         List<MapLayer> mapLayers;
         static int mapWidth;
         public static int WidthInPixels
@@ -19,7 +19,7 @@ namespace MGRpgLibrary.TileEngine
             get { return mapHeight * Engine.TileHeight; }
         }
         static int mapHeight;
-        public TileMap(List<TileSet> tilesets,List<MapLayer> layers)
+        public TileMap(List<Tileset> tilesets,List<MapLayer> layers)
         {
             this.tilesets = tilesets;
             this.mapLayers = layers;
@@ -31,9 +31,9 @@ namespace MGRpgLibrary.TileEngine
                     throw new Exception("Map layer size exception");
             }
         }
-        public TileMap(TileSet tileset,MapLayer layer)
+        public TileMap(Tileset tileset,MapLayer layer)
         {
-            tilesets = new List<TileSet>();
+            tilesets = new List<Tileset>();
             tilesets.Add(tileset);
             mapLayers = new List<MapLayer>();
             mapLayers.Add(layer);
@@ -68,18 +68,23 @@ namespace MGRpgLibrary.TileEngine
                     for(int x = min.X; x < max.X; x++)
                     {
                         tile = layer.GetTile(x, y);
-                        if(tile.TileIndex==-1||tile.TileSet==-1)
+                        if(tile.TileIndex==-1||tile.Tileset==-1)
                             continue;
                         destination.X = x * Engine.TileWidth;
                         spriteBatch.Draw(
-                            tilesets[tile.TileSet].Texture,
+                            tilesets[tile.Tileset].Texture,
                             destination,
-                            tilesets[tile.TileSet].SourceRectangle[tile.TileIndex],
+                            tilesets[tile.Tileset].SourceRectangles[tile.TileIndex],
                             Color.White
                             );
                     }
                 }
             }
+        }
+
+        public void AddTileset(Tileset tileset)
+        {
+            tilesets.Add(tileset);
         }
     }
 }

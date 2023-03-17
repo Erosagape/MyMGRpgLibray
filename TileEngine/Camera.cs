@@ -19,7 +19,7 @@ namespace MGRpgLibrary.TileEngine
         public Vector2 Position
         {
             get { return position; }
-            private set { position = value; }
+            set { position = value; }
         }
         float speed;
         public float Speed
@@ -122,10 +122,10 @@ namespace MGRpgLibrary.TileEngine
                 LockCamera();
             }                            
         }
-        private void LockCamera()
+        public void LockCamera()
         {
-            position.X = MathHelper.Clamp(position.X, 0, (TileMap.WidthInPixels * zoom) - viewportRectangle.Width);
-            position.Y = MathHelper.Clamp(position.Y, 0, (TileMap.HeightInPixels * zoom) - viewportRectangle.Height);
+            position.X = MathHelper.Clamp(position.X,0,TileMap.WidthInPixels * zoom - viewportRectangle.Width);
+            position.Y = MathHelper.Clamp(position.Y,0,TileMap.HeightInPixels * zoom - viewportRectangle.Height);
         }
         public void LockToSprite(AnimatedSprite sprite)
         {

@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 namespace MGRpgLibrary.TileEngine
 {
-    public class TileSet
+    public class Tileset
     {
         Texture2D image;
         public Texture2D Texture
@@ -38,11 +38,11 @@ namespace MGRpgLibrary.TileEngine
             private set { tilesHigh = value; }
         }
         Rectangle[] sourceRectangles;
-        public Rectangle[] SourceRectangle
+        public Rectangle[] SourceRectangles
         {
             get { return (Rectangle[])sourceRectangles.Clone(); }
         }
-        public TileSet(
+        public Tileset(
             Texture2D img,
             int tilesW,
             int tilesH,
