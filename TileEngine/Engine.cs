@@ -23,6 +23,10 @@ namespace MGRpgLibrary.TileEngine
         }
         public static Point VectorToCell(Vector2 position)
         {
+            if (tileWidth == 0)
+                tileWidth = 1;
+            if (tileHeight == 0)
+                tileHeight = 1;
             return new Point((int)position.X / tileWidth, (int)position.Y / tileHeight);
         }
     }

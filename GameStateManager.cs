@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 namespace MGRpgLibrary
 {
+    public enum ChangeType { Change, Pop, Push }
     public class GameStateManager : GameComponent
     {
         public event EventHandler OnStateChange;
