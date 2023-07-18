@@ -6,52 +6,63 @@ using Microsoft.Xna.Framework.Graphics;
 using RpgLibrary.WorldClasses;
 namespace MGRpgLibrary.TileEngine
 {
-    public class MapLayer
+    public class MapLayer : ILayer
     {
-        Tile[,] map;
+        #region Field Region
+        Tile[,] layer;
+        #endregion
+        #region Property Region
         public int Width
         {
-            get { return map.GetLength(1); }
+            get { return layer.GetLength(1); }
         }
         public int Height
         {
-            get { return map.GetLength(0); }
+            get { return layer.GetLength(0); }
         }
+        #endregion
+        #region Constructor Region
         public MapLayer(Tile[,] map)
         {
-            this.map = (Tile[,])map.Clone();
+            this.layer = (Tile[,])map.Clone();
         }
-        public MapLayer(int width,int height)
+        public MapLayer(int width, int height)
         {
-            map = new Tile[height, width];
-            for(int y = 0; y < height; y++)
+            layer = new Tile[height, width];
+            for (int y = 0; y < height; y++)
             {
-                for(int x = 0; x < width; x++)
+                for (int x = 0; x < width; x++)
                 {
-                    map[y, x] = new Tile(0, 0);
+                    layer[y, x] = new Tile(0, 0);
                 }
             }
         }
-        public Tile GetTile(int x,int y)
+        #endregion
+        #region Method Region
+        public Tile GetTile(int x, int y)
         {
-            return map[y, x];
+            return layer[y, x];
         }
-        public void SetTile(int x,int y, Tile tile)
+        public void SetTile(int x, int y, Tile tile)
         {
-            map[y, x] = tile;
+            layer[y, x] = tile;
         }
-        public void SetTile(int x,int y,int tileIndex,int tileset)
-        {
-            map[y, x] = new Tile(tileIndex, tileset);
-        }
+        public void SetTile(int x, int y, int tileIndex, int tileset)
 
+        {
+            layer[y, x] = new Tile(tileIndex, tileset);
+        }
+        public void Update(GameTime gameTime)
+        {
+        }
         public void Draw(SpriteBatch spriteBatch, Camera camera, List<Tileset> tilesets)
         {
             Point cameraPoint = Engine.VectorToCell(camera.Position * (1 / camera.Zoom));
             Point viewPoint = Engine.VectorToCell(
             new Vector2(
             (camera.Position.X + camera.ViewportRectangle.Width) * (1 / camera.Zoom),
-            (camera.Position.Y + camera.ViewportRectangle.Height) * (1 / camera.Zoom)));
+            (camera.Position.Y + camera.ViewportRectangle.Height) * (1 /
+            camera.Zoom)));
             Point min = new Point();
             Point max = new Point();
             min.X = Math.Max(0, cameraPoint.X - 1);
@@ -77,18 +88,23 @@ namespace MGRpgLibrary.TileEngine
                 }
             }
         }
-
         public static MapLayer FromMapLayerData(MapLayerData data)
         {
             MapLayer layer = new MapLayer(data.Width, data.Height);
-            for(int y = 0; y < data.Height; y++)
+            for (int y = 0; y < data.Height; y++)
             {
-                for(int x=0;x< data.Width; x++)
+                for (int x = 0; x < data.Width; x++)
                 {
-                    layer.SetTile(x, y, data.GetTile(x, y).TileIndex, data.GetTile(x, y).TileSetIndex);
+                    layer.SetTile(
+                    x,
+
+                    y,
+                    data.GetTile(x, y).TileIndex,
+                    data.GetTile(x, y).TileSetIndex);
                 }
             }
             return layer;
         }
+        #endregion
     }
 }
