@@ -18,6 +18,13 @@ namespace MGRpgLibrary.WorldClasses
         {
             get { return screenRect; }
         }
+        public TileMap CurrentMap
+        {
+            get
+            {
+                return levels[currentLevel].Map;
+            }
+        }
         ItemManager itemManager = new ItemManager();
         readonly List<Level> levels = new List<Level>();
         public List<Level> Levels

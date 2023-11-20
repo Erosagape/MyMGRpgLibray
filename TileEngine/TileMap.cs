@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RpgLibrary.WorldClasses;
+
 namespace MGRpgLibrary.TileEngine
 {
     public class TileMap
@@ -10,10 +12,15 @@ namespace MGRpgLibrary.TileEngine
         #region Field Region
         List<Tileset> tilesets;
         List<ILayer> mapLayers;
+        CollisionLayer collisionLayer;
         static int mapWidth;
         static int mapHeight;
         #endregion
         #region Property Region
+        public CollisionLayer CollisionLayer
+        {
+            get { return collisionLayer; }
+        }
         public static int WidthInPixels
         {
             get { return mapWidth * Engine.TileWidth; }
@@ -25,11 +32,12 @@ namespace MGRpgLibrary.TileEngine
         #endregion
         #region Constructor Region
         public TileMap(List<Tileset> tilesets, MapLayer baseLayer, MapLayer buildingLayer,
-        MapLayer splatterLayer)
+        MapLayer splatterLayer,CollisionLayer collisionLayer)
 
         {
             this.tilesets = tilesets;
             this.mapLayers = new List<ILayer>();
+            this.collisionLayer = collisionLayer;
             mapLayers.Add(baseLayer);
             AddLayer(buildingLayer);
             AddLayer(splatterLayer);
@@ -38,10 +46,13 @@ namespace MGRpgLibrary.TileEngine
         }
         public TileMap(Tileset tileset, MapLayer baseLayer)
         {
-            tilesets = new List<Tileset>();
-            tilesets.Add(tileset);
-            mapLayers = new List<ILayer>();
-            mapLayers.Add(baseLayer);
+            tilesets = new List<Tileset> { 
+                tileset
+            };
+            mapLayers = new List<ILayer> { 
+                baseLayer
+            };            
+            collisionLayer = new CollisionLayer();
             mapWidth = baseLayer.Width;
             mapHeight = baseLayer.Height;
         }
