@@ -48,6 +48,10 @@ namespace MGRpgLibrary.SpriteClasses
         {
             get { return animations[currentAnimation].FrameHeight; }
         }
+        public Vector2 Center
+        {
+            get { return new Vector2(Position.X + Width / 2, Position.Y + Height / 2); }
+        }
         public AnimatedSprite(Texture2D sprite,Dictionary<AnimationKey,Animation> animation)
         {
             texture = sprite;

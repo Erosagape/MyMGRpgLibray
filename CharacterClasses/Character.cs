@@ -11,7 +11,11 @@ namespace MGRpgLibrary.CharacterClasses
 {
     public class Character
     {
+        #region Constant Region
 
+        public const int SpeakingRadius = 32;
+        public const int CollisionRadius = 8;
+        #endregion
         #region Field Region
         protected Entity entity;
         protected AnimatedSprite sprite;
